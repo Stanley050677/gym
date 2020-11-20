@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import json, sys, os
 from os import path
+
 from _policies import BinaryActionLinearPolicy # Different file so it can be unpickled
 import argparse
 
@@ -47,8 +48,7 @@ def do_rollout(agent, env, num_steps, render=False):
         total_rew += reward
         if render and t%3==0: env.render()
         if done: break
-    return total_rew, t+1
-
+    return total_rew; t+1
 if __name__ == '__main__':
     logger.set_level(logger.INFO)
 
